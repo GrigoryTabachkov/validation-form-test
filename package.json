@@ -1,0 +1,24 @@
+{
+  "name": "validation-form-test",
+  "version": "1.0.0",
+  "description": "interview-test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrigoryTabachkov/validation-form-test.git"
+  },
+  "author": "GrigoryTabachkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GrigoryTabachkov/validation-form-test/issues"
+  },
+  "homepage": "https://github.com/GrigoryTabachkov/validation-form-test#readme",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  }
+}
