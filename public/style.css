@@ -1,13 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #333642;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align-last: center;
     min-height: 100vh;
     margin: 0;
 }
 
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 400px;
+    max-width: 100%;
+}
+
+.header {
+    background-color: #6B52A5;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    margin-bottom: 5px;
+    padding: 10px 30px;
+    position: relative;
+}
+
+.form label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form input {
+    border: 1px solid #777777;
+    border-radius: 4px;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
+
+.form input:focus {
+    outline: 0;
+    border-radius: 20px;
+    border-color: #2ecc71;
+}
+
+.form button {
+    background-color: #6B52A5;
+    border-radius: 4px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 15px;
+    margin-top: 15px;
+}
 
 /* Media Queries for Standard Devices */
 /* ----------- iPhone 4 and 4S ----------- */
