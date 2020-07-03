@@ -6,6 +6,9 @@
     "node": true
   },
   "rules": {
-    "no-console": 0
+    "no-console": 0,
+    "no-shadow": 0,
+    "no-alert": 0,
+    "no-useless-escape": 0
   }
 }
