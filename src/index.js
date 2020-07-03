@@ -62,7 +62,7 @@ function pasteHandler(event) {
       break;
 
     case email:
-      // taЫыbachkov`~!#$%^&*хаюкен()+[{}]\|:;"'<,>.?/gri_gЯory@gmail.com
+      // 1989_taЫыbachkov`~!#$%^&*хаюкен()+[{}]\|:;"'<,>.?/grigЯory@gmail.com
       console.log(`\nВставка \n${pastedData} \nв поле c id="${target.id}"`);
       target.value = pastedData.replace(/[^.\w.@gmail.com]/g, ' ').replace(/\s+/g, '').trim();
       console.log(`Результат:\n${target.value}`);
@@ -80,10 +80,22 @@ function pasteHandler(event) {
   }
 }
 
-function newUser() {
+async function newUser(event) {
+  event.preventDefault();
 
+  const requestedData = await document.forms.signUpForm;
+  const formData = new FormData(requestedData);
+  if (userName.value !== '' && email.value !== '' && phone.value !== '') {
+    const userData = {
+      name: formData.get('nameData'),
+      email: formData.get('emailData'),
+      phone: formData.get('phoneData'),
+    };
+    console.log(userData);
+  }
 }
 
 form.addEventListener('paste', pasteHandler);
 form.addEventListener('change', validator);
 form.addEventListener('submit', validator);
+form.addEventListener('submit', newUser);
