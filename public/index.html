@@ -13,18 +13,21 @@
     <div class="header">
         <h1>Регистрация</h1>
     </div>
-    <form id="form" class="form" name="signUpForm">
+    <form id="main-form" class="main-form" name="signUpForm">
         <div class="form">
             <label for="username">ФИО</label>
-            <input type="text" name="nameData" placeholder="Иванов Иван Иванович" id="username" contenteditable='true' />
+            <input type="text" name="nameData" placeholder="Иванов Иван Иванович" id="username" />
+            <small>Error message</small>
         </div>
         <div class="form">
             <label for="email">Email</label>
             <input type="email" name="emailData" placeholder="ivanov.ivan@gmail.com" id="email"/>
+            <small>Error message</small>
         </div>
         <div class="form">
             <label for="phone">Телефон</label>
             <input type="phone" name="phoneData" placeholder="+79994445566" id="phone"/>
+            <small>Error message</small>
         </div>
 
         <button>Отправить</button>

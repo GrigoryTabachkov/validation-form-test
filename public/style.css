@@ -26,17 +26,17 @@ body {
     color: #fff;
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .form {
-    margin-bottom: 5px;
-    padding: 10px 30px;
+    padding: 4px 40px;
     position: relative;
 }
 
 .form label {
     display: inline-block;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .form input {
@@ -51,18 +51,35 @@ body {
 
 .form input:focus {
     outline: 0;
-    border-radius: 20px;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+}
+
+.form.success input {
     border-color: #2ecc71;
 }
 
-.form button {
+.form.error input {
+    border-color: #e74c3c;
+}
+
+.form small {
+    color: brown;
+    font-size: 12px;
+    visibility: hidden;
+}
+
+.form.error small {
+    visibility: visible;
+}
+
+.main-form button {
     background-color: #6B52A5;
     border-radius: 4px;
     color: #fff;
     font-family: inherit;
     font-size: 16px;
     padding: 15px;
-    margin-top: 15px;
+    margin: 20px;
 }
 
 /* Media Queries for Standard Devices */
