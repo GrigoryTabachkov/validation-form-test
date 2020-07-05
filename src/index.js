@@ -62,14 +62,14 @@ function pasteHandler(event) {
       break;
 
     case email:
-      // 1989_taЫыbachkov`~!#$%^&*хаюкен()+[{}]\|:;"'<,>.?/grigЯory@gmail.com
+      // taЫыbachkov`~!#$%^&*хаюкен()+[{}]\|:;"'<,>.?/grigЯory@gmail.com
       console.log(`\nВставка \n${pastedData} \nв поле c id="${target.id}"`);
       target.value = pastedData.replace(/[^.\w.@gmail.com]/g, ' ').replace(/\s+/g, '').trim();
       console.log(`Результат:\n${target.value}`);
       break;
 
     case phone:
-      // `~!#$%^&*хаюкенq+7(9wertyZXCV+[{16)2-}]\|:;"'<,>.--57-19!-48
+      // `~!#$%^&*хаюкенq0+7(9wertyZXCV+[{16)2-}]\|:;"'<,>.--57-19!-48
       console.log(`\nВставка \n${pastedData} \nв поле c id="${target.id}"`);
       target.value = pastedData.replace(/[^0-9]/g, '').trim();
       console.log(`Результат:\n${target.value} \n${target.value.length}`);
@@ -83,14 +83,18 @@ function pasteHandler(event) {
 async function newUser(event) {
   event.preventDefault();
 
-  const requestedData = await document.forms.signUpForm;
+  const requestedData = document.forms.signUpForm;
   const formData = new FormData(requestedData);
-  if (userName.value !== '' && email.value !== '' && phone.value !== '') {
-    const userData = {
-      name: formData.get('nameData'),
-      email: formData.get('emailData'),
-      phone: formData.get('phoneData'),
-    };
+
+  let userData;
+  if (validUserName(userName.value) && validEmail(email.value) && validPhone(phone.value)) {
+    await Promise.all([
+      userData = {
+        name: formData.get('nameData'),
+        email: formData.get('emailData'),
+        phone: formData.get('phoneData'),
+      },
+    ]).catch((error) => console.log(error));
     console.log(userData);
   }
 }
